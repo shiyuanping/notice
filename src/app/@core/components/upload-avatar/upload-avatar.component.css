@@ -1,0 +1,13 @@
+/* 上传头像样式 */
+:host ::ng-deep .avatar-uploader > .ant-upload, :host ::ng-deep .avatar {
+  width: 94px;
+  height: 100px;
+}
+:host ::ng-deep .ant-upload.ant-upload-select-picture-card > .ant-upload {
+  padding: 6px;
+}
+:host ::ng-deep .ant-upload.ant-upload-select-picture-card {
+  background-color: #fff;
+  margin-right: 0;
+  margin-bottom: 0;
+}

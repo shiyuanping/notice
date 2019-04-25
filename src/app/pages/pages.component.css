@@ -1,0 +1,324 @@
+.ant-layout-header {
+  padding: 0;
+  height: 52px;
+  line-height: 52px;
+  z-index: 1000;
+  position: relative;
+}
+/* 收缩菜单按钮 */
+.collapse {
+  width: 45px;
+  height: 52px;
+  text-align: right;
+  color: #fff;
+  position: absolute;
+  right: 180px;
+}
+.ant-btn-circle {
+  width: 34px;
+  padding: 0;
+  font-size: 16px;
+  border-radius: 14%;
+  height: 30px;
+}
+/* 公司名称 */
+.company{
+  width: 280px;
+  height: 52px;
+  color: #fff;
+  margin-right: 10px;
+  position: absolute;
+  left: 10px;
+}
+.company img {
+  display: inline-block;
+  margin-top: -10px;
+  margin-right: 8px;
+  height: 28px;
+}
+.company span {
+  height: 52px;
+  font-size: 17px;
+  line-height: 52px;
+}
+/* 皮肤设置 */
+/* .skin-setting{
+  width: 40px;
+  height: 52px;
+  position: absolute;
+  right: 266px;
+  text-align: center;
+  color: #fff;
+} */
+.skin-setting{
+  width: 40px;
+  height: 52px;
+  position: absolute;
+  right: 244px;
+  text-align: center;
+  color: #fff;
+}
+.skin-setting:hover {
+  background: #80a0c1;
+}
+.skin-setting a{
+  color: #fff;
+}
+:host ::ng-deep #skin-setting .anticon svg {
+  margin-top: 16px;
+}
+/* 皮肤设置的下拉菜单 */
+.ant-dropdown-menu {
+  outline: none;
+  position: relative;
+  list-style-type: none;
+  padding: 4px 0;
+  margin: 0;
+  text-align: left;
+  background-color: #fff;
+  border-radius: 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  background-clip: padding-box;
+}
+.user-setting{
+  width: 64px;
+  height: 52px;
+  text-align: center;
+  position: absolute;
+  right: 20px;
+  color: #fff;
+}
+.user-setting a {
+  color: #fff;
+  font-weight: 600;
+}
+.user-setting a:hover {
+  background: #80a0c1;
+}
+.icon-nav {
+  width: 46px;
+  position: absolute;
+  right: 110px;
+}
+.icon-nav a {
+  width: 40px;
+  height: 52px;
+  display: inline-block;
+  text-align: center;
+  font-size: 16px;
+}
+.avatar{
+  width: 36px;
+  height: 52px;
+  line-height: 48px;
+  position: absolute;
+  right: 66px;
+}
+.realname{
+  float: right;
+  color: #fff;
+  margin-left:6px;
+  font-size: 16px;
+}
+
+.ant-layout {
+  width:100%;
+  height: 100%;
+  background: #cadff5;
+  overflow: hidden;
+}
+
+/* 日间展开时候的样式 */
+:host ::ng-deep .ant-menu-inline > .ant-menu-item{
+  line-height: 48px;
+  height: 48px;
+  border-top: 1px solid #e7e7e7;
+  border-bottom: 1px solid #e7e7e7;
+  font-weight: 600;
+  font-size: 13px;
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+:host ::ng-deep .ant-menu-inline .ant-menu-item{
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 13px;
+}
+:host ::ng-deep .ant-menu-inline .ant-menu-item:not(:last-child){
+  margin-top: -1px;
+}
+:host ::ng-deep .ant-menu-inline>.ant-menu-submenu>.ant-menu-submenu-title{
+  line-height: 48px;
+  height: 48px;
+  border-bottom: 1px solid #e7e7e7;
+  margin-top: 0;
+  margin-bottom: 0;
+  font-weight: 600;
+  font-size: 13px;
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.two-li {
+  height: 45px;
+  line-height: 45px;
+}
+
+:host ::ng-deep .ant-menu-submenu-title:hover {
+  background: #fff;
+}
+:host ::ng-deep .ant-menu-inline .ant-menu-item:hover{
+  background: #fff;
+}
+
+/* 收缩时候的样式 */
+:host ::ng-deep .ant-menu-inline-collapsed > .ant-menu-submenu > .ant-menu-submenu-title {
+  left: 0;
+  text-overflow: clip;
+  padding: 0 15px !important;
+}
+.ant-menu-inline-collapsed[_ngcontent-c1] > .ant-menu-item[_ngcontent-c1] {
+  padding: 0 15px!important;
+}
+
+/* 夜间模式 */
+:host ::ng-deep .ant-menu-dark .ant-menu-item {
+  border-top: 1px solid #22262e;
+  border-bottom: 1px solid #22262e;
+}
+:host ::ng-deep .ant-menu-dark .ant-menu-submenu>.ant-menu-submenu-title {
+  border-bottom: 1px solid #22262e;
+}
+:host ::ng-deep .ant-menu-dark .ant-menu-submenu-title:hover {
+  background: #4d5669;
+}
+:host ::ng-deep .ant-menu-dark .ant-menu-submenu-title:focus {
+  background: #4d5669;
+}
+:host ::ng-deep .ant-menu-dark .ant-menu-item:hover {
+  background: #4d5669;
+}
+:host ::ng-deep .ant-menu-dark .ant-menu-item:focus {
+  background: #375471;
+}
+
+
+/* 标签页样式修改start */
+:host ::ng-deep .ant-tabs.ant-tabs-card > .ant-tabs-bar .ant-tabs-tab {
+  border: none;
+  background: #fff;
+  color: #444;
+  padding: 0 14px;
+  line-height: 37px;
+}
+:host ::ng-deep .ant-tabs.ant-tabs-card > .ant-tabs-bar .ant-tabs-tab-active {
+  color: #007465;
+  font-weight: 600;
+  border-bottom: 2px solid #007465;
+}
+:host ::ng-deep .ant-tabs.ant-tabs-card > .ant-tabs-bar .ant-tabs-tab-active .ant-tabs-close-x {
+  color: #007465;
+}
+
+:host ::ng-deep .ant-layout-sider {
+  background: transparent;
+}
+:host ::ng-deep .ant-layout-sider-children {
+  height: 100%;
+  padding-top: .1px;
+  margin-top: -.1px;
+  min-height: 858px;
+}
+
+.content-box {
+  margin-top:52px;
+}
+.tabs-box {
+  position: relative;
+  background-color: #fff;
+  width: 100%;
+  height: 40px;
+  margin: 0;
+  padding: 0;
+}
+.tabs {
+  position: absolute;
+  right: 34px;
+  width: calc(100% - 34px);
+  /* background: pink; */
+  height: 100%;
+}
+
+.closeTabs {
+  position: absolute;
+  right: 0;
+  width: 34px;
+  height: 40px;
+  line-height: 40px;
+  /* background: #444; */
+  padding-top: 2px;
+  text-align: left;
+  border-bottom: 1px solid #e8e8e8;
+}
+
+/*滚动条样式*/
+.content{
+  /* background:#f5f6f6; */
+  background:#fff;
+  padding: 0;
+  overflow-y: auto;
+  height: 100%;
+}
+.content::-webkit-scrollbar {/*滚动条整体样式*/
+  width: 8px;     /*高宽分别对应横竖滚动条的尺寸*/
+  height: 8px;
+}
+.content::-webkit-scrollbar-thumb {/*滚动条里面小方块*/
+  /* -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2); */
+  border-radius: 60px;
+  background: #bfbfbf;
+}
+.content::-webkit-scrollbar-track {/*滚动条里面轨道*/
+  /* -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2); */
+  border-radius: 0;
+  background: #efefef;
+}
+.menu::-webkit-scrollbar {/*滚动条整体样式*/
+  width: 8px;     /*高宽分别对应横竖滚动条的尺寸*/
+  height: 8px;
+}
+.menu::-webkit-scrollbar-thumb {/*滚动条里面小方块*/
+  border-radius: 60px;
+  background: #bfbfbf;
+}
+.menu::-webkit-scrollbar-track {/*滚动条里面轨道*/
+  border-radius: 0;
+  background: #efefef;
+}
+
+.ant-layout * {
+  box-sizing: border-box;
+  outline: none;
+}
+
+:host ::ng-deep .ant-form-explain, .ant-form-extra {
+  color: #f5222d;
+}
+/* 自定义图标样式 by Zoe */
+:host ::ng-deep .ant-menu-item .anticon{
+  min-width: 18px;
+  margin-right: 8px;
+  font-size: 14px;
+}
+:host ::ng-deep .ant-menu-submenu-title .anticon {
+  min-width: 18px;
+  margin-right: 8px;
+}
+.custom-icon {
+  font-size: 18px;
+}
+:host ::ng-deep .ant-badge-count {
+  box-shadow: none;
+  top: -12px;
+  right: -10px;
+}
+:host ::ng-deep .ant-badge-multiple-words {
+  padding: 0 5px;
+}

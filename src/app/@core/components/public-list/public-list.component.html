@@ -1,0 +1,132 @@
+<div class="public-box">
+    <div class="config-buts">
+      <span class="border-name">操作</span>
+      <button nz-button nzType="primary" class="add-btn" (click)="add()">新增{{_type}}</button>
+    </div>
+    <nz-table #projectTable
+      [nzData]="tenderList?.data"
+      [nzShowSizeChanger]="true"
+      [nzPageSizeOptions]="[8, 10, 15, 20]"
+      [nzFrontPagination]="false"
+      [nzTotal]="tenderList?.total"
+      [nzPageIndex]="tenderList?.current"
+      [nzPageSize]="tenderList?.pageSize"
+      (nzPageIndexChange)="getTenderList($event, tenderList.pageSize)"
+      (nzPageSizeChange)="getTenderList(1, $event)"
+      [nzShowTotal]="total">
+      <thead>
+        <tr>
+          <th nzWidth="44px">序号</th>
+          <th>工程编号</th>
+          <th>工程名称</th>
+          <th>项目类型</th>
+          <th>创建时间</th>
+          <th>发布时间</th>
+          <th>是否发布</th>
+          <th width="130">操作</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let project of projectTable.data; let i=index">
+          <td>{{(tenderList.current - 1) * tenderList.pageSize + i + 1}}</td>
+          <td><a target="_blank" routerLink="/preview" [queryParams]="{id:project.id}">{{project.numberNo}}</a></td>
+          <td>{{project.name}}</td>
+          <td>{{project.type}}</td>
+          <td>{{project.createTime}}</td>
+          <td>{{project.openTime | slice:0:10}}</td>
+          <td>{{project.ispublish ? '已发布' : '尚未发布'}}</td>
+          <td>
+            <a nz-popconfirm [nzTitle]="project.ispublish ? '您确定取消发布该数据?' : '您确定发布该数据?'" (nzOnConfirm)="release(project.id, project.ispublish)" nzPlacement="top">{{project.ispublish ? '取消发布' : '发布'}}</a>
+            <nz-divider nzType="vertical"></nz-divider>
+            <ng-container *ngIf="!project.ispublish">
+              <a (click)="edit(project.id)">编辑</a>
+              <nz-divider nzType="vertical"></nz-divider>
+            </ng-container>
+            <a nz-popconfirm nzTitle="您确定删除该数据?" (nzOnConfirm)="delete(project.id)" nzPlacement="topRight">删除</a>
+          </td>
+        </tr>
+      </tbody>
+    </nz-table>
+    <ng-template #total>
+      共{{tenderList?.total}}条
+    </ng-template>
+  </div>
+  <ng-template #tenderTemplate>
+    <nz-row class="mb5">
+      <nz-col nzSpan="4" class="txt-right"><nz-form-label>招标项目编号</nz-form-label></nz-col>
+      <nz-col nzSpan="19"><input nz-input [(ngModel)]="tenderInfo.numberNo"></nz-col>
+    </nz-row>
+    <nz-row class="mb5">
+      <nz-col nzSpan="4" class="txt-right"><nz-form-label>招标项目名称</nz-form-label></nz-col>
+      <nz-col nzSpan="19"><input nz-input [(ngModel)]="tenderInfo.name"></nz-col>
+    </nz-row>
+    <nz-row class="mb5">
+      <nz-col nzSpan="4" class="txt-right"><nz-form-label>招标类型</nz-form-label></nz-col>
+      <nz-col nzSpan="19"><input nz-input [(ngModel)]="tenderInfo.type"></nz-col>
+    </nz-row>
+    <!-- <nz-row class="mb5">
+      <nz-col nzSpan="4" class="txt-right"><nz-form-label>发布时间</nz-form-label></nz-col>
+      <nz-col nzSpan="19"><nz-date-picker [(ngModel)]="tenderInfo.openTime"></nz-date-picker></nz-col>
+    </nz-row>
+    <nz-row class="mb5">
+      <nz-col nzSpan="4" class="txt-right"><nz-form-label>公示类型</nz-form-label></nz-col>
+      <nz-col nzSpan="19"><input nz-input [(ngModel)]="tenderInfo.noticeType" readonly></nz-col>
+    </nz-row> -->
+    <nz-row class="mb5">
+      <nz-col nzSpan="4" class="txt-right"><nz-form-label>内容</nz-form-label></nz-col>
+      <nz-col nzSpan="19">
+        <quill-editor [modules]="config" [style]="{height: '250px'}" [(ngModel)]="tenderInfo.content" placeholder="在这里输入内容"></quill-editor>
+      </nz-col>
+    </nz-row>
+  </ng-template>
+
+  <ng-template #tenderFooter>
+    <button nz-button nzType="default">取消</button>
+    <button nz-button nzType="primary">保存</button>
+    <button nz-button nzType="danger">预览</button>
+    <a target="_blank" routerLink="/preview" [queryParams]="{name:tenderInfo.name, no:tenderInfo.numberNo, type: tenderInfo.type, content:tenderInfo.content}">预览</a>
+  </ng-template>
+<!--
+  <nz-modal  nzWidth="800" [nzStyle]="{ top: '50px' }"
+    [(nzVisible)]="isVisible"
+    [nzTitle]="modalTitle"
+    [nzContent]="modalContent"
+    [nzFooter]="modalFooter"
+    (nzOnCancel)="handleCancel()"
+  >
+    <ng-template #modalTitle>
+      Custom Modal Title
+    </ng-template>
+
+    <ng-template #modalContent>
+      <nz-row class="mb5">
+        <nz-col nzSpan="4" class="txt-right"><nz-form-label>招标项目编号</nz-form-label></nz-col>
+        <nz-col nzSpan="19"><input nz-input [(ngModel)]="tenderInfo.numberNo"></nz-col>
+      </nz-row>
+      <nz-row class="mb5">
+        <nz-col nzSpan="4" class="txt-right"><nz-form-label>招标项目名称</nz-form-label></nz-col>
+        <nz-col nzSpan="19"><input nz-input [(ngModel)]="tenderInfo.name"></nz-col>
+      </nz-row>
+      <nz-row class="mb5">
+        <nz-col nzSpan="4" class="txt-right"><nz-form-label>招标类型</nz-form-label></nz-col>
+        <nz-col nzSpan="19"><input nz-input [(ngModel)]="tenderInfo.type"></nz-col>
+      </nz-row>
+      <nz-row class="mb5">
+        <nz-col nzSpan="4" class="txt-right"><nz-form-label>公示类型</nz-form-label></nz-col>
+        <nz-col nzSpan="19"><input nz-input [(ngModel)]="tenderInfo.noticeType" readonly></nz-col>
+      </nz-row>
+      <nz-row class="mb5">
+        <nz-col nzSpan="4" class="txt-right"><nz-form-label>内容</nz-form-label></nz-col>
+        <nz-col nzSpan="19">
+          <quill-editor [modules]="config" [style]="{height: '250px'}" [(ngModel)]="tenderInfo.content" placeholder="在这里输入内容"></quill-editor>
+        </nz-col>
+      </nz-row>
+    </ng-template>
+
+    <ng-template #modalFooter>
+      <button nz-button nzType="default" (click)="isVisible = false">取消</button>
+      <button nz-button nzType="primary">保存</button>
+      <button nz-button nzType="danger">预览</button>
+      <a target="_blank" routerLink="/preview" [queryParams]="{name:tenderInfo.name, no:tenderInfo.numberNo, type: tenderInfo.type, content:tenderInfo.content}">预览</a>
+    </ng-template>
+  </nz-modal> -->

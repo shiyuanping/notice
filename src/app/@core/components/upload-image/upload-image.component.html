@@ -1,0 +1,32 @@
+<!-- <nz-upload
+  nzAction="{{url}}"
+  nzListType="picture-card"
+  [(nzFileList)]="fileList"
+  [nzShowButton]="fileList.length < _limitNumb"
+  [nzPreview]="handlePreview"
+  [nzShowUploadList]="{ showPreviewIcon: true, showRemoveIcon: true }"
+  >
+    <i nz-icon type="plus"></i>
+    <div class="ant-upload-text">上传图片</div>
+</nz-upload>
+<nz-modal [nzVisible]="previewVisible" [nzContent]="modalContent" [nzFooter]="null" (nzOnCancel)="previewVisible=false">
+  <ng-template #modalContent>
+    <img [src]="previewImage" [ngStyle]="{ 'width': '100%' }" />
+  </ng-template>
+</nz-modal> -->
+
+<!-- [nzShowUploadList]="{ showPreviewIcon: true, showRemoveIcon: false }" -->
+
+<nz-upload class="avatar-uploader"
+  [nzAction]="url"
+  nzName="avatar"
+  nzListType="picture-card"
+  [nzShowUploadList]="false"
+  [nzBeforeUpload]="beforeUpload"
+  (nzChange)="handleChange($event)">
+  <ng-container *ngIf="!avatarUrl">
+    <i nz-icon type="plus"></i>
+    <div class="ant-upload-text">上传</div>
+  </ng-container>
+  <img *ngIf="avatarUrl" [src]="avatarUrl" class="avatar">
+</nz-upload>

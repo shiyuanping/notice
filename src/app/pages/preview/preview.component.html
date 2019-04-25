@@ -1,0 +1,16 @@
+<div class="content_bg">
+  <div class="logo_bg">
+      <div class="container logo"><a href="./index.html"><img src="../../../assets/images/icon/logo.png"></a></div>
+  </div>
+  <div class="container info">
+      <div class="title">
+          <span id="name">{{tenderInfo.name}}</span>
+      </div>
+      <div class="title2">
+          项目编号：<span class="no">{{tenderInfo.numberNo}}</span>
+          项目类型：<span class="type">{{tenderInfo.type}}</span>
+          发布时间：<span class="date">{{tenderInfo.openTime | slice:0:10}}</span>
+      </div>
+      <div class="content" [innerHTML]="tenderInfo.content | html"></div>
+  </div>
+</div>

@@ -1,0 +1,35 @@
+<div class="body">
+  <div class="box">
+    <div class="login-title">欢迎使用 &nbsp; 大卓后台管理系统</div>
+    <div class="login-box">
+      <div class="title">用户登录</div>
+      <div class="form">
+        <form nz-form [formGroup]="validateForm">
+          <div class="input-box">
+            <div class="account-input">
+              <nz-form-item>
+                <nz-form-control>
+                  <nz-input-group nzPrefixIcon="anticon anticon-user">
+                    <input type="text" nz-input formControlName="account" placeholder="用户名">
+                  </nz-input-group>
+                  <nz-form-explain *ngIf="validateForm.get('account').dirty && validateForm.get('account').errors" style="padding-top: 5px;">请输入您的用户名!</nz-form-explain>
+                </nz-form-control>
+              </nz-form-item>
+            </div>
+            <nz-form-item>
+              <nz-form-control>
+                <nz-input-group nzPrefixIcon="anticon anticon-lock">
+                  <input type="password" nz-input formControlName="password" placeholder="密码">
+                </nz-input-group>
+                <nz-form-explain *ngIf="validateForm.get('password').dirty && validateForm.get('password').errors" style="margin-top: 5px;">请输入密码!</nz-form-explain>
+              </nz-form-control>
+            </nz-form-item>
+          </div>
+          <div class="loginBtn">
+            <button nz-button [nzType]="'primary'" [disabled]="!validateForm.valid" (click)="signIn()">登录</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

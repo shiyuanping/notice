@@ -1,0 +1,144 @@
+*{
+  font-family: "Arial","Microsoft YaHei","黑体","宋体",sans-serif;
+}
+.body{
+  background: url(../../../assets/images/login/3.jpg)  no-repeat center center fixed;
+  position:fixed;
+  top: 0;
+  left: 0;
+  width:100%;
+  height:100%;
+  min-width: 1000px;
+  background-color: #fff;
+  background-repeat: no-repeat;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -o-background-size: cover;
+  background-position: center 0;
+}
+.box {
+  position: absolute;
+  width: 600px;
+  height: 530px;
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  margin-left: -300px;
+  margin-top: -280px;
+}
+.login-title{
+  font-size: 46px;
+  color: #fff;
+  width: 600px;
+  margin: 0 auto;
+  margin-bottom: 56px;
+}
+.login-box{
+  width: 360px;
+  height: 380px;
+  background-color: #fff;
+  border-radius: 36px;
+  margin: 0 auto;
+}
+
+@media(max-width: 1366px) {
+  .login-title{
+    position: absolute;
+    top: 90px;
+    right: 14.5%;
+    font-size: 46px;
+    color: #fff;
+  }
+  .login-box{
+    position: absolute;
+    top: 180px;
+    right: 14.5%;
+    width: 360px;
+    height: 380px;
+    background-color: #fff;
+    border-radius: 36px;
+  }
+}
+.login-box .title {
+  color: #0f0b00;
+  font-size: 32px;
+  font-family: "Arial","Microsoft YaHei","黑体","宋体",sans-serif;
+  height: 120px;
+  line-height: 120px;
+}
+.login-box .form{
+  width: 280px;
+  height: 200px;
+  margin:0 auto;
+  margin-bottom: 30px;
+}
+.login-box .form input{
+  box-sizing: border-box;
+  width: 278px;
+  height: 47px;
+  padding-left: 56px;
+  font-size: 17px;
+}
+.login-box .form img{
+  position: absolute;
+  top:116px;
+  width: 56px;
+  height: 56px;
+}
+.loginBtn {
+  margin-top: 26px;
+}
+.loginbtn{
+  display: block;
+  width: 180px;
+  height: 38px;
+  background-color: #5890C3;
+  border: none;
+  margin: 0 auto;
+  color: #fff;
+  font-size: 16px;
+  border-radius: 20px;
+  outline: none;
+}
+
+:host ::ng-deep .anticon:before {
+  display: block;
+  font-size: 24px;
+}
+.login-box .form .register {
+  float: left;
+  color: #5890C3;
+  font-size: 16px;
+  text-decoration: underline;
+}
+.login-box .form .forget{
+  float: right;
+  color: #5890C3;
+  font-size: 16px;
+  text-decoration: underline;
+}
+
+:host ::ng-deep .ant-btn-primary {
+  width: 180px;
+  height: 38px;
+  color: #fff;
+  background-color: #5890C3;
+  border-color: #5890C3;
+  border-radius: 20px;
+}
+
+:host ::ng-deep .ant-btn-primary.disabled, .ant-btn-primary.disabled.active, .ant-btn-primary.disabled:active, .ant-btn-primary.disabled:focus, .ant-btn-primary.disabled:hover, .ant-btn-primary[disabled], .ant-btn-primary[disabled].active, .ant-btn-primary[disabled]:active, .ant-btn-primary[disabled]:focus, .ant-btn-primary[disabled]:hover{
+  color: rgba(0,0,0,.25);
+  background-color: #f5f5f5;
+  border-color: #d9d9d9;
+}
+
+.input-box{
+  width: 280px;
+  height: 146px;
+}
+.account-input{
+  width: 280px;
+  height: 76px;
+}
+

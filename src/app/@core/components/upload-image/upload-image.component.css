@@ -1,0 +1,36 @@
+/* 上传头像样式 */
+:host ::ng-deep .avatar-uploader > .ant-upload, :host ::ng-deep .avatar {
+  width: 94px;
+  height: 100px;
+}
+:host ::ng-deep .ant-upload.ant-upload-select-picture-card > .ant-upload {
+  padding: 6px;
+}
+:host ::ng-deep .ant-upload.ant-upload-select-picture-card {
+  background-color: #fff;
+  margin-right: 0;
+  margin-bottom: 0;
+}
+
+/* :host ::ng-deep .ant-upload-select-picture-card i {
+  font-size: 32px;
+  color: #999;
+}
+:host ::ng-deep .ant-upload-select-picture-card .ant-upload-text {
+  margin-top: 8px;
+  color: #666;
+} */
+
+/* 阿里上传图片样式 */
+/* :host ::ng-deep i {
+    font-size: 32px;
+    color: #999;
+}
+:host ::ng-deep .ant-upload-text {
+    margin-top: 8px;
+    color: #666;
+}
+
+:host ::ng-deep .ant-upload-list-picture-card .ant-upload-list-item-info:before {
+  left: 0;
+} */
